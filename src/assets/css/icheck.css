@@ -1,0 +1,185 @@
+.icheck--small {
+  padding: 8px 16px;
+}
+
+.icheck--medium {
+  padding: 10px 20px;
+}
+
+.icheck--mini {
+  padding: 6px 12px;
+}
+
+.icheck {
+  padding: 12px 20px;
+}
+
+.checkbox-blue, .radio-blue {
+  position: relative;
+  display: block;
+  margin: 0;
+  font-size: 14px;
+  color: #999;
+  background: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #DCDFE6;
+  box-sizing: border-box;
+}
+
+.checkbox-blue:hover, .radio-blue:hover {
+  border: #2196F3 solid 1px;
+  color: #333;
+}
+
+.checkbox-blue.checked, .radio-blue.checked {
+  background: #fff;
+  background: url(../images/check_blue.png) no-repeat right bottom;
+  border: 1px solid #2196F3;
+  color: #333;
+}
+
+.checkbox-blue.disabled, .radio-blue.disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.checkbox-blue.disabled:hover, .radio-blue.disabled:hover {
+  border-color: #ccc;
+}
+
+.checkbox-blue.checked:hover, .radio-blue.checked:hover {
+  border-color: #2196F3;
+}
+
+.checkbox-red, .radio-red {
+  position: relative;
+  display: block;
+  margin: 0;
+  font-size: 14px;
+  color: #999;
+  background: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #DCDFE6;
+  box-sizing: border-box;
+}
+
+.checkbox-red:hover, .radio-red:hover {
+  border: #F44336 solid 1px;
+  color: #333;
+}
+
+.checkbox-red.checked, .radio-red.checked {
+  background: #fff;
+  background: url(../images/check_red.png) no-repeat right bottom;
+  border: 1px solid #F44336;
+  color: #333;
+}
+
+.checkbox-red.disabled, .radio-red.disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.checkbox-red.disabled:hover, .radio-red.disabled:hover {
+  border-color: #ccc;
+}
+
+.checkbox-red.checked:hover, .radio-red.checked:hover {
+  border-color: #F44336;
+}
+
+.checkbox-pink, .radio-pink {
+  position: relative;
+  display: block;
+  margin: 0;
+  font-size: 14px;
+  color: #999;
+  background: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #DCDFE6;
+  box-sizing: border-box;
+}
+
+.checkbox-pink:hover, .radio-pink:hover {
+  border: #E91E63 solid 1px;
+  color: #333;
+}
+
+.checkbox-pink.checked, .radio-pink.checked {
+  background: #fff;
+  background: url(../images/check_red.png) no-repeat right bottom;
+  border: 1px solid #E91E63;
+  color: #333;
+}
+
+.checkbox-pink.disabled, .radio-pink.disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.checkbox-pink.disabled:hover, .radio-pink.disabled:hover {
+  border-color: #ccc;
+}
+
+.checkbox-pink.checked:hover, .radio-pink.checked:hover {
+  border-color: #E91E63;
+}
+
+.checkbox-purple, .radio-purple {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0 13px;
+  font-size: 14px;
+  height: 34px;
+  line-height: 34px;
+  color: #999;
+  background: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #CCCCCC;
+}
+
+.checkbox-purple:hover, .radio-purple:hover {
+  border: #9C27B0 solid 1px;
+  color: #333;
+}
+
+.checkbox-purple.checked, .radio-purple.checked {
+  background: #fff;
+  background: url(../images/check_purple.png) no-repeat right bottom;
+  border: 1px solid #9C27B0;
+  color: #333;
+}
+
+.checkbox-purple.disabled, .radio-purple.disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.checkbox-purple.disabled:hover, .radio-purple.disabled:hover {
+  border-color: #ccc;
+}
+
+.checkbox-purple.checked:hover, .radio-purple.checked:hover {
+  border-color: #9C27B0;
+}
+
+.input[type="check"], input[type="radio"] {
+  opacity: 0;
+}

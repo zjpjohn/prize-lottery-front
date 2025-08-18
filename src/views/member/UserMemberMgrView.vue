@@ -1,0 +1,221 @@
+<template>
+  <div style="margin:32px 32px 0 32px">
+    <div style="display: flex;align-items: center">
+      <span style="margin-right:16px">手机号</span>
+      <el-input v-model="query.phone" placeholder="请输入查询手机号" style="width: 180px" clearable></el-input>
+      <span style="margin:0 16px 0 32px">会员状态</span>
+      <el-select clearable v-model="query.state" placeholder="请选择会员状态" style="width: 180px">
+        <el-option label="无效" value="0"></el-option>
+        <el-option label="正常" value="1"></el-option>
+        <el-option label="过期" value="2"></el-option>
+      </el-select>
+      <span style="margin: 0 16px 0 32px">过期时间</span>
+      <el-select clearable v-model="query.expireDays" placeholder="请选择最近过期时间" style="width: 180px">
+        <el-option label="最近一天" value="1"></el-option>
+        <el-option label="最近两天" value="2"></el-option>
+        <el-option label="最近三天" value="3"></el-option>
+        <el-option label="最近一周" value="7"></el-option>
+        <el-option label="最近两周" value="14"></el-option>
+      </el-select>
+      <span style="margin: 0 16px 0 32px">最近开通</span>
+      <el-select clearable v-model="query.renewDays" placeholder="请选择开通时间" style="width: 180px">
+        <el-option label="最近一天" value="1"></el-option>
+        <el-option label="最近两天" value="2"></el-option>
+        <el-option label="最近三天" value="3"></el-option>
+        <el-option label="最近一周" value="7"></el-option>
+        <el-option label="最近两周" value="14"></el-option>
+      </el-select>
+      <el-button plain type="primary" style="margin-left: 16px" @click="toOpenMember">开通会员</el-button>
+    </div>
+    <div style="margin-top: 32px">
+      <el-table stripe :data="list.records"
+                style="width: 100%"
+                :row-style="{height:'48px'}"
+                :header-cell-style="{background:'#eef1f6',color:'#606266',height: '44px'}">
+        <el-table-column label="用户标识" prop="userId"></el-table-column>
+        <el-table-column label="手机号" prop="phone"></el-table-column>
+        <el-table-column label="用户昵称" prop="nickname"></el-table-column>
+        <el-table-column label="会员状态" prop="state.label"></el-table-column>
+        <el-table-column label="累计开通" prop="times"></el-table-column>
+        <el-table-column label="过期截止" prop="expireAt" width="180px"></el-table-column>
+        <el-table-column label="上次过期" prop="lastExpire" width="180px"></el-table-column>
+        <el-table-column label="最新开通" prop="renewTime" width="180px"></el-table-column>
+        <el-table-column label="操作">
+          <template v-slot="scope">
+            <el-link :underline="false"
+                     type="info"
+                     @click="toMemberDetail(scope.row.userId)">详情
+            </el-link>
+            <el-link :underline="false"
+                     type="primary"
+                     style="margin-left: 12px"
+                     @click="pickUser(scope.row)">续费
+            </el-link>
+          </template>
+        </el-table-column>
+        <div slot="empty">
+          <div class="table-empty">
+            <img src="../../assets/images/empty.png" alt="" style="width: 84px">
+            <span>暂无会员信息</span>
+          </div>
+        </div>
+      </el-table>
+      <el-pagination background
+                     style="margin-top: 16px"
+                     layout="total,prev,pager,next"
+                     :page-size="limit"
+                     :current-page.sync="page"
+                     :total="list.total">
+      </el-pagination>
+    </div>
+    <el-dialog :visible.sync="showDialog"
+               @close="closeDialog"
+               :modal-append-to-body="false" width="60%">
+      <div slot="title" class="title">选择会员套餐-开通会员</div>
+      <div style="padding-bottom: 32px">
+        <el-table :data="packList"
+                  style="width:100%;margin-top: 4px"
+                  :row-style="{height:'54px',color:'black'}"
+                  :header-cell-style="{color:'#333333',height: '50px'}">
+          <el-table-column label="套餐标识" prop="seqNo" width="200px"></el-table-column>
+          <el-table-column label="套餐名称" prop="name"></el-table-column>
+          <el-table-column label="套餐价格" width="120px">
+            <template v-slot="scope">
+              <span>{{ scope.row.price / 100 }}元</span>
+            </template>
+          </el-table-column>
+          <el-table-column label="折扣价格" width="120px">
+            <template v-slot="scope">
+              <span>{{ scope.row.discount / 100 }}元</span>
+            </template>
+          </el-table-column>
+          <el-table-column label="有效期">
+            <template v-slot="scope">
+              <span>{{ unitType[scope.row.timeUnit.value] }}</span>
+            </template>
+          </el-table-column>
+          <el-table-column label="优先级">
+            <template v-slot="scope">
+              <span>{{ scope.row.priority === 1 ? '推荐套餐' : '一般套餐' }}</span>
+            </template>
+          </el-table-column>
+          <el-table-column label="支付备注" width="200px">
+            <template v-slot="scope">
+              <el-select clearable
+                         v-model="scope.row.channel"
+                         placeholder="备注支付方式"
+                         style="width: 160px">
+                <el-option label="支付宝支付" value="支付宝支付"></el-option>
+                <el-option label="微信支付" value="微信支付"></el-option>
+                <el-option label="其他方式" value="其他方式"></el-option>
+              </el-select>
+            </template>
+          </el-table-column>
+          <el-table-column label="操作" width="100px">
+            <template v-slot="scope">
+              <el-link :underline="false"
+                       type="primary"
+                       style="margin-right: 10px"
+                       @click="openMemberPack(scope.row)">开通
+              </el-link>
+            </template>
+          </el-table-column>
+        </el-table>
+      </div>
+    </el-dialog>
+  </div>
+</template>
+<script>
+import {memberList, openMember, usingPackList} from "../../api/member-service";
+import {unitMap} from "../../libs/pack_time_unit";
+
+export default {
+  name: "UserMemberMgrView",
+  data() {
+    return {
+      page: 1,
+      limit: 10,
+      query: {
+        phone: null,
+        state: null,
+        expireDays: null,
+        renewDays: null,
+      },
+      list: {
+        current: 1,
+        total: 0,
+        records: [],
+      },
+      packList: [],
+      selected: null,
+      showDialog: false,
+      unitType: unitMap,
+      channel: null,
+    };
+  },
+  methods: {
+    toMemberDetail(userId) {
+      this.$router.push(`/member/user/detail/${userId}`);
+    },
+    toOpenMember() {
+      this.$router.push(`/member/user/open`);
+    },
+    queryMemberList() {
+      let condition = Object.assign({
+        page: this.page,
+        limit: this.limit,
+      }, this.query);
+      memberList(condition).then(data => this.list = data);
+    },
+    queryPackList() {
+      usingPackList().then(data => {
+        let value = data || [];
+        value.forEach(e => e.channel = null);
+        this.packList = value;
+      });
+    },
+    pickUser(user) {
+      this.selected   = user;
+      this.showDialog = true;
+    },
+    closeDialog() {
+      this.selected   = null;
+      this.showDialog = false;
+      this.packList.forEach(e => e.channel = null);
+    },
+    openMemberPack(pack) {
+      let params = {
+        userId: this.selected.userId,
+        packNo: pack.seqNo,
+        channel: pack.channel,
+      };
+      openMember(params).then(_ => {
+        this.$message.success('续费成功');
+        this.closeDialog();
+        this.packList.forEach(e => e.channel = null);
+        this.queryMemberList();
+      });
+    },
+  },
+  created() {
+    this.queryMemberList();
+    this.queryPackList();
+  },
+  watch: {
+    page(value) {
+      this.queryMemberList();
+    },
+    query: {
+      deep: true,
+      handler(val, old) {
+        this.page = 1;
+        this.queryMemberList();
+      }
+    }
+  },
+}
+</script>
+
+<style scoped>
+
+</style>

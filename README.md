@@ -26,64 +26,64 @@ npm run build
 
 | 首页大屏                                                                              | 
 |-----------------------------------------------------------------------------------|
-| ![首页大屏](https://cdn.icaiwa.com/open/admin/1.png?x-oss-process=image/resize,w_800) |
+| ![首页大屏](https://cdn.icaiwa.com/open/admin/1.png?x-oss-process=image/resize,w_1000) |
 
 | 系统管理                                                                              |
 |-----------------------------------------------------------------------------------|
-| ![系统管理](https://cdn.icaiwa.com/open/admin/2.png?x-oss-process=image/resize,w_800) |
+| ![系统管理](https://cdn.icaiwa.com/open/admin/2.png?x-oss-process=image/resize,w_1000) |
 
 | 应用管理                                                                              |
 |-----------------------------------------------------------------------------------|
-| ![应用管理](https://cdn.icaiwa.com/open/admin/3.png?x-oss-process=image/resize,w_800) |
+| ![应用管理](https://cdn.icaiwa.com/open/admin/3.png?x-oss-process=image/resize,w_1000) |
 
 | 用户管理                                                                              |
 |-----------------------------------------------------------------------------------|
-| ![用户管理](https://cdn.icaiwa.com/open/admin/4.png?x-oss-process=image/resize,w_800) |
+| ![用户管理](https://cdn.icaiwa.com/open/admin/4.png?x-oss-process=image/resize,w_1000) |
 
 | 流量主管理                                                                              | 
 |------------------------------------------------------------------------------------|
-| ![流量主管理](https://cdn.icaiwa.com/open/admin/6.png?x-oss-process=image/resize,w_800) |
+| ![流量主管理](https://cdn.icaiwa.com/open/admin/6.png?x-oss-process=image/resize,w_1000) |
 
 | 会员管理                                                                              |
 |-----------------------------------------------------------------------------------|
-| ![会员管理](https://cdn.icaiwa.com/open/admin/5.png?x-oss-process=image/resize,w_800) |
+| ![会员管理](https://cdn.icaiwa.com/open/admin/5.png?x-oss-process=image/resize,w_1000) |
 
 | 消息管理                                                                              |                                                                        
 |-----------------------------------------------------------------------------------|
-| ![消息管理](https://cdn.icaiwa.com/open/admin/8.png?x-oss-process=image/resize,w_800) | 
+| ![消息管理](https://cdn.icaiwa.com/open/admin/8.png?x-oss-process=image/resize,w_1000) | 
 
 | 资讯管理                                                                              |
 |-----------------------------------------------------------------------------------|
-| ![会员管理](https://cdn.icaiwa.com/open/admin/9.png?x-oss-process=image/resize,w_800) |
+| ![会员管理](https://cdn.icaiwa.com/open/admin/9.png?x-oss-process=image/resize,w_1000) |
 
 | 专家管理                                                                               |                                                                               
 |------------------------------------------------------------------------------------|
-| ![专家管理](https://cdn.icaiwa.com/open/admin/10.png?x-oss-process=image/resize,w_800) | 
+| ![专家管理](https://cdn.icaiwa.com/open/admin/10.png?x-oss-process=image/resize,w_1000) | 
 
 | 3D管理                                                                               |
 |------------------------------------------------------------------------------------|
-| ![3D管理](https://cdn.icaiwa.com/open/admin/11.png?x-oss-process=image/resize,w_800) |
+| ![3D管理](https://cdn.icaiwa.com/open/admin/11.png?x-oss-process=image/resize,w_1000) |
 
 | 排列三管理                                                                               | 
 |-------------------------------------------------------------------------------------|
-| ![排列三管理](https://cdn.icaiwa.com/open/admin/12.png?x-oss-process=image/resize,w_800) |
+| ![排列三管理](https://cdn.icaiwa.com/open/admin/12.png?x-oss-process=image/resize,w_1000) |
 
 | 排列五管理                                                                               |
 |-------------------------------------------------------------------------------------|
-| ![排列五管理](https://cdn.icaiwa.com/open/admin/13.png?x-oss-process=image/resize,w_800) |
+| ![排列五管理](https://cdn.icaiwa.com/open/admin/13.png?x-oss-process=image/resize,w_1000) |
 
 | 双色球管理                                                                               | 
 |-------------------------------------------------------------------------------------|
-| ![双色球管理](https://cdn.icaiwa.com/open/admin/14.png?x-oss-process=image/resize,w_800) |  
+| ![双色球管理](https://cdn.icaiwa.com/open/admin/14.png?x-oss-process=image/resize,w_1000) |  
 
 | 大乐透管理                                                                               |
 |-------------------------------------------------------------------------------------|
-| ![大乐透管理](https://cdn.icaiwa.com/open/admin/15.png?x-oss-process=image/resize,w_800) |
+| ![大乐透管理](https://cdn.icaiwa.com/open/admin/15.png?x-oss-process=image/resize,w_1000) |
 
 | 七乐彩管理                                                                               |
 |-------------------------------------------------------------------------------------|
-| ![七乐彩管理](https://cdn.icaiwa.com/open/admin/16.png?x-oss-process=image/resize,w_800) | 
+| ![七乐彩管理](https://cdn.icaiwa.com/open/admin/16.png?x-oss-process=image/resize,w_1000) | 
 
 | 快乐8管理                                                                               |
 |-------------------------------------------------------------------------------------|
-| ![快乐8管理](https://cdn.icaiwa.com/open/admin/17.png?x-oss-process=image/resize,w_800) |
+| ![快乐8管理](https://cdn.icaiwa.com/open/admin/17.png?x-oss-process=image/resize,w_1000) |
